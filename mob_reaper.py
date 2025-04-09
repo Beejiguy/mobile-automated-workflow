@@ -2,6 +2,7 @@ import os
 from common import helper
 from apps.andro_goat import manager as androgoat
 from apps.va_lottery import manager as vallotery
+from apps.ohlq import manager as ohql
 from service.log_service import log_splash
 from dotenv import load_dotenv
 import os
@@ -31,6 +32,8 @@ def do_test():
             androgoat.do_test(PACKAGE_NAME)
         case "com.va.lottery.uat":
             vallotery.do_test(PACKAGE_NAME)
+        case "com.ohlq.app.stage":
+            ohql.do_test(PACKAGE_NAME)            
         case _:
             print(f"[-] Error: This application is not mapped: {PACKAGE_NAME}")        
 
